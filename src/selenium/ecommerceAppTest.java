@@ -11,6 +11,8 @@ public class ecommerceAppTest {
 		
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		
+		//테스토용 사이트
 		driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
 
 	}

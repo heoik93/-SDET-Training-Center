@@ -11,7 +11,12 @@ public class landingpageTest {
 		
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		
+		//실제사이트 
 		driver.get("https://flyasiana.com/C/KR/KO/index/");
+		
+		//테스트용사이트
+		driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
 
 	}
 
