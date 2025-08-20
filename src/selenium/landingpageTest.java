@@ -5,20 +5,14 @@ import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class LoginTest {
+public class landingpageTest {
 
 	public static void main(String[] args) {
 		
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		
-		//테스트용 사이트
-		driver.get("https://rahulshettyacademy.com/locatorspractice/");
-		
-		//실제 사이트
+		driver.get("https://flyasiana.com/C/KR/KO/index/");
 
-		
-		
 	}
 
 }

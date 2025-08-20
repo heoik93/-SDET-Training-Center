@@ -32,5 +32,14 @@
 			<attribute name="m2e-apt" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/shell/.m2/repository/org/seleniumhq/selenium/selenium-api/4.34.0/selenium-api-4.34.0.jar" sourcepath="C:/Users/shell/.m2/repository/org/seleniumhq/selenium/selenium-api/4.34.0/selenium-api-4.34.0-sources.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="org.seleniumhq.selenium"/>
+			<attribute name="maven.artifactId" value="selenium-api"/>
+			<attribute name="maven.version" value="4.34.0"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
