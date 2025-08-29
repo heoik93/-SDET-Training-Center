@@ -48,15 +48,7 @@ public class landingpageTest {
 			}
 		}
 		System.out.println("Second Step Passed");
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		driver.close();		
 		
 		
 	}
