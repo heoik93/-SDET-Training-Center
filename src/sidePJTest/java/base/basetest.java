@@ -1,27 +1,37 @@
 package sidePJTest.java.base;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-public class basetest {
+public class BaseTest {
 
-	@BeforeMethod
-	public void setUp() {
-	    String browser = config.getProperty("browser"); // config.properties에서 읽기
-	    driver = DriverManager.getDriver(browser);
-	    driver.manage().window().maximize();
-	    driver.get(config.getProperty("url"));
+    protected WebDriver driver;
+    protected Properties config;
 
-	@AfterMethod
-	public void tearDown() {
-	    if (driver != null) {
-	        driver.quit();
-	    }
-	}
+    @BeforeMethod
+    public void setUp() {
+        config = new Properties();
+        try {
+            FileInputStream fis = new FileInputStream("src/test/resources/config.properties");
+            config.load(fis);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
+        String browser = config.getProperty("browser");
+        driver = DriverManager.getDriver(browser); 
+        driver.get(config.getProperty("url"));
+    }
 
-	}
-
+    @AfterMethod
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
 }

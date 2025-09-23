@@ -6,8 +6,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
-public class driverManager {
-	public static WebDriver getDriver(String browser) {
+public class DriverManager {
+    public static WebDriver getDriver(String browser) {
         switch (browser.toLowerCase()) {
             case "chrome":
                 return new ChromeDriver();
@@ -21,5 +21,4 @@ public class driverManager {
                 throw new IllegalArgumentException("지원하지 않는 브라우저: " + browser);
         }
     }
-
 }
