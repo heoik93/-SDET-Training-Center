@@ -17,7 +17,7 @@ public class BaseTest {
     public void setUp() {
         config = new Properties();
         try {
-            FileInputStream fis = new FileInputStream("src/test/resources/config.properties");
+            FileInputStream fis = new FileInputStream("src/sidePJTest/resources/config.properties");
             config.load(fis);
         } catch (IOException e) {
             e.printStackTrace();
