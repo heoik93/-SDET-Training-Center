@@ -12,7 +12,7 @@ public class BaseTest {
 
     protected WebDriver driver;
     protected Properties config;
-
+    
     @BeforeMethod
     public void setUp() {
         config = new Properties();
@@ -28,6 +28,7 @@ public class BaseTest {
         driver.get(config.getProperty("url"));
     }
 
+    
     @AfterMethod
     public void tearDown() {
         if (driver != null) {
