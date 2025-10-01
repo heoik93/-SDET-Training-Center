@@ -5,9 +5,9 @@
     <classes>
       <class name="sidePJTest.test.LoginTest">
         <methods>
-          <include name="setUp"/>
-          <include name="testValidLogin"/>
           <include name="tearDown"/>
+          <include name="testValidLogin" invocation-numbers="0 1"/>
+          <include name="setUp"/>
         </methods>
       </class> <!-- sidePJTest.test.LoginTest -->
     </classes>

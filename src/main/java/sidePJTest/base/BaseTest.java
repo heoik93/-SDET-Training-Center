@@ -1,4 +1,4 @@
-package sidePJTest.java.base;
+package sidePJTest.base;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -17,7 +17,7 @@ public class BaseTest {
     public void setUp() {
         config = new Properties();
         try {
-            FileInputStream fis = new FileInputStream("src/sidePJTest/resources/config.properties");
+            FileInputStream fis = new FileInputStream("src/resources/config.properties");
             config.load(fis);
         } catch (IOException e) {
             e.printStackTrace();
@@ -26,6 +26,7 @@ public class BaseTest {
         String browser = config.getProperty("browser");
         driver = DriverManager.getDriver(browser); 
         driver.get(config.getProperty("url"));
+        //driver.manage().window().maximize();
     }
 
     

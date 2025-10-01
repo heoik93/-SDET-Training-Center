@@ -1,4 +1,4 @@
-package sidePJTest.java.pages;
+package sidePJTest.pages;
 
 import java.time.Duration;
 
