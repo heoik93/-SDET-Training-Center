@@ -1,0 +1,13 @@
+name: Run Selenium Tests
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build Docker image
+        run: docker build -t qasdetproject .
+      - name: Run tests
+        run: docker run --rm qasdetproject
