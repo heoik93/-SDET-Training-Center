@@ -53,6 +53,8 @@ public class LoginTest extends BaseTest {
                 alert.accept(); // alert 닫기
             } catch (TimeoutException te) {
                 System.out.println("❌ 3초 내에 alert가 뜨지 않음");
+                Assert.fail("3초 내에 alert가 뜨지 않았습니다. 로그인 실패 처리 누락 가능성 있음.");
+
             }
             isLoggedIn = false;
         }
