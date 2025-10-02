@@ -26,11 +26,11 @@ jobs:
           sudo apt install -y ./google-chrome-stable_current_amd64.deb
           google-chrome --version
 
-      - name: Install ChromeDriver 117.0.5938.88
+      - name: Install ChromeDriver 117.0.5938.149
         run: |
-          wget https://chromedriver.storage.googleapis.com/117.0.5938.88/chromedriver_linux64.zip
-          unzip chromedriver_linux64.zip
-          sudo mv chromedriver /usr/bin/chromedriver
+          wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/117.0.5938.149/linux64/chromedriver-linux64.zip
+          unzip chromedriver-linux64.zip
+          sudo mv chromedriver-linux64/chromedriver /usr/bin/chromedriver
           sudo chmod +x /usr/bin/chromedriver
           chromedriver --version
 
