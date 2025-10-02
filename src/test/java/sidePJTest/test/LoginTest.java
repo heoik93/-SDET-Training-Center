@@ -15,12 +15,6 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import io.qameta.allure.Description;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
-import io.qameta.allure.Story;
 import sidePJTest.base.BaseTest;
 import sidePJTest.pages.LoginPage;
 import sidePJTest.utils.ExcelReader;
@@ -38,13 +32,7 @@ public class LoginTest extends BaseTest {
         String sheetName = "LoginData";
         return ExcelReader.getSheetData(filePath, sheetName);
     }
-
-    @Epic("로그인 기능")
-    @Feature("로그인 성공과 실패")
-    @Story("유효/무효한 계정으로 로그인")
-    @Severity(SeverityLevel.CRITICAL)
-    @Description("이 테스트는 사용자가 올바른 아이디와 비밀번호로 로그인할 수 있는지 검증합니다.")
-    	
+	
     @Test(dataProvider = "loginData")
     public void testValidLogin(String no, String username, String password, String email, String userType) {
         LoginPage loginPage = new LoginPage(driver);

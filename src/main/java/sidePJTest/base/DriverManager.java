@@ -1,7 +1,5 @@
 package sidePJTest.base;
 
-import java.util.UUID;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -18,13 +16,11 @@ public class DriverManager {
             case "chrome":
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions chromeOptions = new ChromeOptions();
-                chromeOptions.addArguments("--user-data-dir=/tmp/chrome-user-data-" + UUID.randomUUID());
                 chromeOptions.addArguments("--window-size=1920,1080");
                 chromeOptions.addArguments("--no-sandbox");
                 chromeOptions.addArguments("--disable-dev-shm-usage");
                 chromeOptions.addArguments("--remote-allow-origins=*");
-
-                
+   
                 return new ChromeDriver(chromeOptions);
 
             case "edge":

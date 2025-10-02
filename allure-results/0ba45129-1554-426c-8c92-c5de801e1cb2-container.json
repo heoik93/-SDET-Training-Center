@@ -1,1 +1,0 @@
-{"uuid":"0ba45129-1554-426c-8c92-c5de801e1cb2","name":"sidePJTest.base.BaseTest.setUp","children":["8a3394e1-2a17-41f2-afd2-c18e5d619b0b"],"description":"","befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1759325197405,"stop":1759325203784}],"afters":[],"start":1759325197405,"stop":1759325203785}
