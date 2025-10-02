@@ -11,12 +11,12 @@ RUN apt-get update && apt-get install -y \
 # 기존 Chrome 제거 (혹시 설치되어 있을 경우)
 RUN apt-get remove -y google-chrome-stable || true
 
-# Chrome v139 설치 (Slimjet 미러 사용)
-RUN wget https://ftp.slimjet.com/chrome/linux/google-chrome-stable_139.0.0.0-1_amd64.deb \
-    && apt install -y ./google-chrome-stable_139.0.0.0-1_amd64.deb \
-    && rm google-chrome-stable_139.0.0.0-1_amd64.deb
+# Chrome v139 설치 (사전 업로드된 .deb 파일 사용)
+COPY google-chrome-stable_139.0.0.0-1_amd64.deb /tmp/
+RUN apt install -y /tmp/google-chrome-stable_139.0.0.0-1_amd64.deb \
+    && rm /tmp/google-chrome-stable_139.0.0.0-1_amd64.deb
 
-# ChromeDriver v139 설치 (Chrome 버전에 맞춤)
+# ChromeDriver v139 설치
 RUN wget https://chromedriver.storage.googleapis.com/139.0.0.0/chromedriver_linux64.zip \
     && unzip chromedriver_linux64.zip \
     && mv chromedriver /usr/bin/chromedriver \
@@ -28,4 +28,4 @@ WORKDIR /app
 COPY . /app
 
 # 테스트 실행 (Xvfb로 디스플레이 설정)
-CMD bash -c "Xvfb :99 -screen 0 1920x1080x24 & export DISPLAY=:99 && mvn clean test"
+CMD ["bash", "-c", "Xvfb :99 -screen 0 1920x1080x24 & export DISPLAY=:99 && mvn clean test"]
