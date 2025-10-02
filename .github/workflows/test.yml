@@ -8,7 +8,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+
+      - name: Start Xvfb
+        run: |
+          Xvfb :99 -screen 0 1920x1080x24 &
+          echo "DISPLAY=:99" >> $GITHUB_ENV
+
       - name: Build Docker image
         run: docker build -t qasdetproject .
+
       - name: Run tests
-        run: docker run --rm qasdetproject
+        run: docker run --rm -e DISPLAY=:99 qasdetproject
